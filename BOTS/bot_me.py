@@ -2,30 +2,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-import undetected_chromedriver as uc
 from selenium.webdriver.support.select import Select
 from subir_recibidos import subir_comprobantes_recibidos
+from BOTS.documents import click_con_movimiento
 
+import undetected_chromedriver as uc
 import time, datetime, random
 from datetime import datetime, timedelta
 import sys, os
 
 CHROME_MAJOR_VERSION = 144
-
-def click_con_movimiento(driver, elemento, pause_min=0.5, pause_max=1.5):
-    actions = ActionChains(driver)
-    
-    # Mover mouse al elemento con pausa aleatoria
-    actions.move_to_element(elemento)
-    actions.pause(random.uniform(pause_min, pause_max))
-    
-    # Click con pequeña pausa post-click
-    actions.click(elemento)
-    actions.pause(random.uniform(0.2, 0.5))
-    
-    actions.perform()
-    time.sleep(random.uniform(0.5, 1.0))  # Pausa adicional después del click
-
 BRAVE_PATH = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
 SRI_URL = "https://srienlinea.sri.gob.ec/auth/realms/Internet/protocol/openid-connect/auth?client_id=app-sri-claves-angular&redirect_uri=https%3A%2F%2Fsrienlinea.sri.gob.ec%2Fsri-en-linea%2F%2Fcontribuyente%2Fperfil&state=04b7b077-e0ef-489f-81df-fa7e8b371002&nonce=79d20507-d1a2-4f75-843b-0f0f48e13c3a&response_mode=fragment&response_type=code&scope=openid"
 
@@ -41,12 +27,14 @@ IDENTIFICACION="1711542959"
 PASSWORD_SRI="ASDasd123."
 
 # MAS ECUADOR
-# RUC="991433686001"
+# RUC="0991433686001"
 # IDENTIFICACION="1711542959"
 # PASSWORD_SRI="ASDasd123."
 
 
-DOWNLOAD_DIR = os.path.abspath("F:/Bots")  # ← CAMBIA ESTA RUTA
+# DOWNLOAD_DIR = os.path.abspath("F:/Bots/Bot_BMI/DOC_BMI")  # ← RUTA IGUALAS
+DOWNLOAD_DIR = os.path.abspath("F:/Bots/Bot_BMI/DOC_IG")  # ← RUTA IGUALAS
+# DOWNLOAD_DIR = os.path.abspath("F:/Bots/Bot_BMI/DOC_ME")  # ← RUTA IGUALAS
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 
@@ -127,15 +115,12 @@ try:
     print("Inicio Captcha")
     select_elem = driver.find_element(By.ID, "frmPrincipal:dia")
     dia_select = Select(select_elem)
-    now = datetime.now()
-    last_date=(now-timedelta(days=1)).day
-    day_str=str(last_date)
-    print('dia anterior: ', day_str)
-    dia_select.select_by_visible_text(day_str)
+    # now = datetime.now()
+    # last_date=(now-timedelta(days=1)).day
+    # day_str=str(last_date)
+    # print('dia anterior: ', day_str)
+    dia_select.select_by_visible_text("Todos")  # Selecciona "Todos"
 
-    # SELECCIONA TIPO DE DOCUMENTO
-
-    #//*[@id="frmPrincipal:btnBuscar"]
     print("Consultar")
     time.sleep(3)
     fe=driver.find_element(By.ID, "frmPrincipal:btnBuscar")
@@ -150,11 +135,44 @@ try:
         except:
             return False
 
+    def seleccionar_documentos():
+            try:
+                chk_document = driver.find_element(By.ID, "frmPrincipal:cmbTipoComprobante")
+                click_con_movimiento(driver, chk_document)
+                document_select = Select(chk_document)
+                document_select.select_by_visible_text("Notas de Crédito")
+                # BUSCAR NOTAS DE CREDITO
+                time.sleep(3)
+                nc=driver.find_element(By.ID, "frmPrincipal:btnBuscar")
+                click_con_movimiento(driver, nc)
+                time.sleep(5)
+
+                descargar = driver.find_element(By.ID, "frmPrincipal:lnkTxtlistado")
+                click_con_movimiento(driver, descargar)
+
+                # SELECCIONAR COMPROBANTES DE RETENCION
+                time.sleep(3)
+                chk_document = driver.find_element(By.ID, "frmPrincipal:cmbTipoComprobante")
+                click_con_movimiento(driver, chk_document)
+                document_select = Select(chk_document)
+                document_select.select_by_visible_text("Comprobante de Retención")
+                # BUSCAR COMPROBANTES DE RETENCION
+                time.sleep(3)
+                nc=driver.find_element(By.ID, "frmPrincipal:btnBuscar")
+                click_con_movimiento(driver, nc)
+                time.sleep(5)
+
+                descargar = driver.find_element(By.ID, "frmPrincipal:lnkTxtlistado")
+                click_con_movimiento(driver, descargar)
+
+                print("✓ Todos los documentos seleccionados.")
+            except Exception as e:
+                print(f"✗ Error al seleccionar documentos: {str(e)}")
     # Intentar resolver captcha con reintentos
+
     max_intentos = 5
     intentos = 0
     captcha_resuelto = False
-
     if verificar_captcha():
         print("⚠️ Captcha detectado. Por favor, resuélvelo manualmente en el navegador.")
         print(f"Tienes un máximo de {max_intentos} intentos de reintentos automáticos.\n")
@@ -163,7 +181,6 @@ try:
             intentos += 1
             tiempo_espera = 10  # segundos entre reintentos
             print(f"[Intento {intentos}/{max_intentos}] Esperando resolución de captcha ({tiempo_espera}s)...")
-            
             time.sleep(tiempo_espera)
             
             # Reintentar consulta
@@ -177,7 +194,7 @@ try:
                     print("✓ Captcha resuelto exitosamente!")
                     time.sleep(5)  # Espera extra para asegurar descarga completa
                     print("SUBIENDO COMPROBANTES RECIBIDOS")
-                    subir_comprobantes_recibidos()
+                    #subir_comprobantes_recibidos()
                     captcha_resuelto = True
                 else:
                     print(f"  → Captcha aún presente. Reintentando...")
@@ -190,15 +207,17 @@ try:
             print("⚠️ Captcha no se resolvió después de máximo de intentos.")
     else:
         print("✓ No se detectó captcha, continuando...")
-
     # Descargar resultado
     try:
         descargar = driver.find_element(By.ID, "frmPrincipal:lnkTxtlistado")
         click_con_movimiento(driver, descargar)
         print("✓ Archivo descargado correctamente!")
         time.sleep(5)  # Espera extra para asegurar descarga completa
+        print("SELECCIONAR DOCUMENTOS")
+        seleccionar_documentos()
+
         print("SUBIENDO COMPROBANTES RECIBIDOS")
-        subir_comprobantes_recibidos()
+        #subir_comprobantes_recibidos()
         time.sleep(2)
     except Exception as e:
         print(f"✗ Error al descargar archivo: {str(e)}")
@@ -213,17 +232,5 @@ except Exception as e:
     print("- Prueba version_main=143 o 145")
     print("- pip install --upgrade undetected-chromedriver selenium")
     sys.exit(1)
-
-# finally:
-#     if driver is not None:
-#         try:
-#             driver.quit()
-#         except OSError as ose:
-#             if ose.winerror == 6:
-#                 print("OSError [WinError 6] ignorado (común y sin impacto)")
-#             else:
-#                 print("Otro error al cerrar:", str(ose))
-#         except Exception as e_close:
-#             print("Error al cerrar:", str(e_close))
 
 print("Script finalizado correctamente")
