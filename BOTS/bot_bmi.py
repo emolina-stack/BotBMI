@@ -111,7 +111,7 @@ def main_bmi():
         time.sleep(3)
         fe=driver.find_element(By.ID, "frmPrincipal:btnBuscar")
         click_con_movimiento(driver, fe)
-        time.sleep(5)
+        time.sleep(10)
 
         # Validar si existe mensaje de captcha
         def verificar_captcha():
@@ -220,4 +220,3 @@ def main_bmi():
         print("- pip install --upgrade undetected-chromedriver selenium")
         sys.exit(1)
 
-print("Script BMI finalizado correctamente")
