@@ -1,19 +1,32 @@
 from camoufox.sync_api import Camoufox
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 from pathlib import Path
+from BOTS.SCRIPTS.upload_file import subir_archivo_desglosado
+
 import numpy as np
 
 
 URL_PATH="https://www.trancenter.com.ec/IFacturaEcuadorBMI/"
-#F:\Bots\NavegadorCamoufox\anulados_emitidos_20260130_1421.csv
-# URL_COMPROBANTES_RECIBIDOS_BMI=Path(r"F:\\Bots\1791301692001_Recibidos.txt") #BMI
-# URL_COMPROBANTES_RECIBIDOS_IG=Path(r"F:\\Bots\1791927559001_Recibidos.txt") #IG
-# URL_COMPROBANTES_RECIBIDOS_ME=Path(r"F:\\Bots\1791301692001_Recibidos.txt") #BMI
+
+FILE_SPLIT=r"F:\Bots\Bot_BMI\DOC_IG\SPLIT_FILES" # RUTA DE ARCHIVOS DIVIDIDOS IG
+carpeta = Path(FILE_SPLIT)
+print("Existe carpeta", carpeta.exists())
+print("Existe carpeta", carpeta.is_dir())
+print("contenido carpeta")
+
+for archivo in carpeta.iterdir():
+    print("   ", archivo.name)
+
+
+#1791927559001_Recibidos_Factura_parte01
+partes = sorted(carpeta.glob("1791927559001_Recibidos_Factura_parte*.txt"))
+print("ALGOOO",partes)
+print(f"Encontradas {len(archivo)} partes para IG_FACT")
 
 rutas_ig={
-    "IG_FACT":Path(r"F:\\Bots\Bot_BMI\DOC_IG\1791927559001_Recibidos.txt"), #  FACTURAS
-    "IG_NC":Path(r"F:\\Bots\Bot_BMI\DOC_IG\1791927559001_Recibidos (1).txt"),# NOTAS DE CREDITO
-    "IG_COMPRET":Path(r"F:\\Bots\Bot_BMI\DOC_IG\1791927559001_Recibidos (2).txt"),#   COMPROBANTES DE RETENCION
+    "IG_FACT":partes, #  FACTURAS
+    "IG_NC":Path(r"F:\\Bots\Bot_BMI\DOC_IG\1791927559001_Recibidos_NC.txt"),# NOTAS DE CREDITO
+    "IG_COMPRET":Path(r"F:\\Bots\Bot_BMI\DOC_IG\1791927559001_Recibidos_CompRet.txt"),#   COMPROBANTES DE RETENCION
 }
 
 rutas_bmi={
@@ -53,13 +66,15 @@ def subir_comprobantes_recibidos_ig():
 
         page.get_by_role("link", name="Carga Documentos Recibidos", exact=True).click()
     #   SUBIDA DE DOCUMENTOS RECIBIDOS FACTURAS
+
+
         print("SUBIDA DE DOCUMENTOS RECIBIDOS FACTURAS")
         page.wait_for_selector('input[type="file"]', timeout=20000)
         page.wait_for_timeout(3000)
         page.set_input_files(
                 'input[type="file"]',
                 #files=str(URL_COMPROBANTES_RECIBIDOS_IG)
-                files=str(rutas_ig["IG_FACT"])
+                files=[str(archivo) for archivo in rutas_ig["IG_FACT"]]
         )
         print("Archivo de emitidos subido!")
         print("GUARDAR DOCUMENTOS EMITIDOS")
