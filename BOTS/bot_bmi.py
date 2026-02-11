@@ -4,10 +4,25 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 from BOTS.documents import click_con_movimiento
+from BOTS.SCRIPTS.change_names import change_file_name_factura,change_file_name_nc, change_file_name_compret 
+
 
 import undetected_chromedriver as uc
 import time
 import sys, os
+
+ruta="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos_Factura.txt" # RUTA DE FACTURA IG
+ruta_archivos="F:/Bots/Bot_BMI/DOC_BMI/SPLIT_FILES" # RUTA DE ARCHIVOS DIVIDIDOS IG
+
+name_factura="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos.txt" # RUTA DE FACTURA IG
+name_factura_changed="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos_Factura.txt"
+
+name_nc="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos (1).txt" # RUTA DE NC IG
+name_nc_changed="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos_NC.txt"# RUTA DE NC CAMBIADA IG
+
+name_compret="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos (2).txt" # RUTA DE COMPROBANTE DE RETENCION IG
+name_compret_changed="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos_CompRet.txt" # RUTA DE COMPROBANTE DE RETENCION CAMBIADA IG
+
 
 def main_bmi():
 
@@ -219,4 +234,8 @@ def main_bmi():
         print("- Prueba version_main=143 o 145")
         print("- pip install --upgrade undetected-chromedriver selenium")
         sys.exit(1)
+
+    change_file_name_factura(name_factura, name_factura_changed)
+    change_file_name_nc(name_nc, name_nc_changed)
+    change_file_name_compret(name_compret, name_compret_changed)
 

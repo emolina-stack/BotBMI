@@ -9,10 +9,10 @@ def subir_archivo_desglosado(
     page,
     selector_input: str = 'input[type="file"]',
     carpeta_o_lista: str = list,
-    espera_despues_subida: float = 5.0,      # segundos
-    espera_confirmacion: float = 3.0,        # segundos después de "enviar"
-    selector_boton_enviar: str = None,       # ej: "#btnGuardar" o "button:has-text('Guardar')"
-    selector_mensaje_exito: str = None,      # ej: "text=Archivo cargado correctamente"
+    espera_despues_subida: float = 5.0,      
+    espera_confirmacion: float = 3.0,        
+    selector_boton_enviar: str = None,       
+    selector_mensaje_exito: str = None,      
     timeout_por_subida: int = 90000
 ):
     if isinstance(carpeta_o_lista, (str, Path)):
@@ -20,8 +20,6 @@ def subir_archivo_desglosado(
         archivos = sorted(carpeta.glob("*.*"))  # todos los archivos
 
         print("existen archivos",archivos)
-        # O filtra solo ciertos tipos:
-        # archivos = sorted(carpeta.glob("*.txt")) + sorted(carpeta.glob("*.csv"))
     else:
         archivos = [Path(f) for f in carpeta_o_lista]
 
@@ -35,7 +33,6 @@ def subir_archivo_desglosado(
     print(f"Iniciando subida secuencial de {total} archivos...")
     
     exitosos = 0
-
     for idx, archivo in enumerate(archivos, 1):
         print(f"\n[{idx}/{total}] Procesando: {archivo.name}")
         
@@ -77,11 +74,7 @@ def subir_archivo_desglosado(
             
         except Exception as e:
             print(f"   ✗ Error al procesar {archivo.name}: {str(e)}")
-            # Opcional: puedes decidir si continuar o detener todo
-            # continue   # descomenta si quieres seguir aunque falle uno
-            # o break    # para detener todo
-        
-        # Pausa mínima entre archivos (anti-detección / estabilidad)
+
         time.sleep(2)
     
     print("\n" + "═"*60)

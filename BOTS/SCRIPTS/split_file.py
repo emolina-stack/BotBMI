@@ -29,7 +29,7 @@ def dividir_con_cabecera(ruta_entrada, lineas_por_parte=1500, carpeta_salida=Non
         parte_datos = contenido[inicio:fin]
         
         numero = (i // lineas_por_parte) + 1
-        nombre = f"{entrada.stem}_parte{numero:02d}"
+        nombre = f"{entrada.stem}_parte{numero:02d}.txt"
         ruta_salida = salida_dir / nombre
         
         with open(ruta_salida, 'w', encoding='latin1') as f_out:

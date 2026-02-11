@@ -3,14 +3,14 @@ from BOTS.bot_ig import main_ig
 from subir_recibidos import subir_comprobantes_recibidos_ig
 from subir_recibidos import subir_comprobantes_recibidos_bmi
 
-# def execute_bots():
-#     print("===========INICIANDO BOT IG=============")
-#     main_ig()# BOT IG
-#     print("===========FINALIZADO BOT IG=============")
-#     print("*********************************************")
-#     print("===========INICIANDO BOT BMI=============")
-#     main_bmi()# BOT BMI
-#     print("===========FINALIZADO BOT BMI=============")
+def execute_bots():
+    print("===========INICIANDO BOT IG=============")
+    # main_ig()# BOT IG
+    print("===========FINALIZADO BOT IG=============")
+    print("*********************************************")
+    print("===========INICIANDO BOT BMI=============")
+    main_bmi()# BOT BMI
+    print("===========FINALIZADO BOT BMI=============")
  
 def carga_archivos():
     print("===========INICIANDO CARGA DE ARCHIVOS IGUALAS=============")
@@ -22,6 +22,6 @@ def carga_archivos():
     
 
 if __name__ == "__main__":
-    # execute_bots()
+    execute_bots()
     print("*************************************")
     carga_archivos()
