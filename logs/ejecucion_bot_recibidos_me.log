@@ -1,0 +1,32 @@
+2026-03-06 16:22:27,639 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-06 16:22:28,994 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-06 16:22:29,008 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-06 16:22:29,009 | INFO     | ejecucion_bot_recibidos_general | *************************************
+2026-03-06 16:22:29,009 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO CARGA DE ARCHIVOS IGUALAS=============
+2026-03-06 16:22:29,012 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-03-06 16:22:55,116 | INFO     | ejecucion_bot_recibidos_ig | CARGA DE DOCUMENTOS RECIBIDOS
+2026-03-06 16:22:55,119 | INFO     | ejecucion_bot_recibidos_ig | LOGIN
+2026-03-06 16:23:02,268 | INFO     | ejecucion_bot_recibidos_ig | INGRESO DE USERNAME: usrBotRecepcionIG
+2026-03-06 16:23:06,475 | INFO     | ejecucion_bot_recibidos_ig | INGRESO DE PASSWORD: y3677D.7lh
+2026-03-06 16:23:11,528 | INFO     | ejecucion_bot_recibidos_ig | MENU
+2026-03-06 16:23:11,903 | INFO     | ejecucion_bot_recibidos_ig | SUBIDA DE DOCUMENTOS RECIBIDOS FACTURAS EN MASIVO
+2026-03-06 16:23:30,815 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-06 16:23:32,408 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-06 16:23:32,424 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-06 16:23:32,427 | INFO     | ejecucion_bot_recibidos_general | *************************************
+2026-03-06 16:23:32,427 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO CARGA DE ARCHIVOS BMI=============
+2026-03-06 16:23:32,434 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-03-06 16:23:58,569 | INFO     | ejecucion_bot_recibidos_ig | CARGA DE DOCUMENTOS RECIBIDOS
+2026-03-06 16:23:58,570 | INFO     | ejecucion_bot_recibidos_ig | LOGIN
+2026-03-06 16:24:02,879 | INFO     | ejecucion_bot_recibidos_ig | INGRESO DE USERNAME: emolinaMAS
+2026-03-06 16:24:08,693 | INFO     | ejecucion_bot_recibidos_ig | INGRESO DE PASSWORD: *******
+2026-03-06 16:24:13,748 | INFO     | ejecucion_bot_recibidos_ig | MENU
+2026-03-06 16:24:14,316 | INFO     | ejecucion_bot_recibidos_ig | SUBIDA DE DOCUMENTOS RECIBIDOS FACTURAS
+2026-03-06 16:24:19,657 | INFO     | ejecucion_bot_recibidos_ig | Archivo de emitidos subido!
+2026-03-06 16:24:19,661 | INFO     | ejecucion_bot_recibidos_ig | GUARDAR DOCUMENTOS EMITIDOS
+2026-03-06 16:24:23,019 | INFO     | ejecucion_bot_recibidos_ig | Archivo ELIMINADO correctamente: 0991433686001_Recibidos_Factura.txt
+2026-03-06 16:24:25,040 | INFO     | ejecucion_bot_recibidos_ig | SUBIDA DE DOCUMENTOS RECIBIDOS NOTAS DE CREDITO
+2026-03-06 16:24:28,154 | ERROR    | ejecucion_bot_recibidos_ig | Error durante la subida de NC: [WinError 2] El sistema no puede encontrar el archivo especificado: 'F:\\Bots\\Bot_BMI\\DOC_ME\\0991433686001_Recibidos_NC.txt'
+2026-03-06 16:24:30,172 | INFO     | ejecucion_bot_recibidos_ig | SUBIDA DE DOCUMENTOS RECIBIDOS COMPROBANTES DE RETENCION
+2026-03-06 16:24:33,216 | ERROR    | ejecucion_bot_recibidos_ig | Error durante la subida de comprobantes de retención: [WinError 2] El sistema no puede encontrar el archivo especificado: 'F:\\Bots\\Bot_BMI\\DOC_ME\\0991433686001_Recibidos_CompRet.txt'
+2026-03-06 16:24:34,337 | INFO     | ejecucion_bot_recibidos_general | ===========FINALIZADA CARGA DE ARCHIVOS BMI=============

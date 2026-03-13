@@ -6,10 +6,12 @@ from selenium.webdriver.support.select import Select
 from BOTS.documents import click_con_movimiento
 from BOTS.SCRIPTS.split_file import dividir_con_cabecera
 from BOTS.SCRIPTS.change_names import change_file_name_factura,change_file_name_nc, change_file_name_compret 
+from utils.loggin_setup import configurar_logging
 
 import undetected_chromedriver as uc
 import time
 import sys, os
+import logging
 
 ruta="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos_Factura.txt" # RUTA DE FACTURA IG
 ruta_archivos="F:/Bots/Bot_BMI/DOC_IG/SPLIT_FILES" # RUTA DE ARCHIVOS DIVIDIDOS IG
@@ -24,6 +26,15 @@ name_compret="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos (2).txt" # RUTA DE 
 name_compret_changed="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos_CompRet.txt" # RUTA DE COMPROBANTE DE RETENCION CAMBIADA IG
 
 def main_ig():
+
+    logger, ruta_log = configurar_logging(
+        nombre_script="ejecucion_bot_recibidos_ig",
+        carpeta="logs",
+        nivel=logging.DEBUG,
+        mostrar_consola=True
+    )
+
+
     CHROME_MAJOR_VERSION = 144
     BRAVE_PATH = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
     SRI_URL = "https://srienlinea.sri.gob.ec/auth/realms/Internet/protocol/openid-connect/auth?client_id=app-sri-claves-angular&redirect_uri=https%3A%2F%2Fsrienlinea.sri.gob.ec%2Fsri-en-linea%2F%2Fcontribuyente%2Fperfil&state=04b7b077-e0ef-489f-81df-fa7e8b371002&nonce=79d20507-d1a2-4f75-843b-0f0f48e13c3a&response_mode=fragment&response_type=code&scope=openid"
@@ -68,7 +79,7 @@ def main_ig():
 
     try:
         wait = WebDriverWait(driver, 20)
-        print(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
+        logger.debug(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
         driver = uc.Chrome(
             options=options,
             version_main=CHROME_MAJOR_VERSION,
@@ -77,14 +88,14 @@ def main_ig():
         )
         driver.maximize_window()
 
-        print("¡Driver iniciado OK!")
+        logger.info("¡Driver iniciado OK!")
         driver.set_page_load_timeout(60)
 
         # Carga SRI directamente
         driver.get(SRI_URL)
         time.sleep(10)  # Dale tiempo para redirects y carga
-        print("SRI cargó → URL final:")
-        print("Título de la página:")
+        logger.info("SRI cargó → URL final:")
+        logger.info("Título de la página: {}".format(driver.title))
 
         # Aquí agrega tu login cuando funcione la carga
         # Ejemplo básico (ajusta selectores si cambian)
@@ -99,28 +110,42 @@ def main_ig():
         
         #//*[@id="mySidebar2"]/div[3]/div/button
         time.sleep(10)  
-        print("MENU")
+        logger.info("MENU")
         fe=driver.find_element(By.XPATH, '//button[@title="Facturación Electrónica"]')
         click_con_movimiento(driver, fe)
         time.sleep(5)
 
-        print("Comprobantes electronicos recibidos")
+        logger.info("Comprobantes electronicos recibidos")
         cer=driver.find_element(By.XPATH, '//*[@id="mySidebar"]/p-panelmenu/div/div[2]/div[2]/div/p-panelmenusub/ul/li/a')
         click_con_movimiento(driver, cer)
         time.sleep(10)
 
+        #   CAPTURA DE FECHA ACTUAL
+        logger.info("Capturando fecha actual")
+        fa=driver.find_element(By.ID,"frmPrincipal:dia")
+        dia_actual = int(fa.get_attribute("value"))
+        logger.info("Dia actual: {} - {}".format(type(dia_actual), dia_actual))
+        if dia_actual==1:
+            logger.info("Cambiar mes")
+            mes_actual = driver.find_element(By.ID,"frmPrincipal:mes")
+            logger.info("MES ACTUAL: {}".format(mes_actual.get_attribute("value")))
+            mes_anterior = int(mes_actual.get_attribute("value")) - 1
+            mes_anterior_select=Select(mes_actual)
+            mes_anterior_select.select_by_value(str(mes_anterior))
+            logger.info("MES ANTERIOR: {}".format(mes_anterior_select))
+
         time.sleep(10)
         #   SELECCIONA FECHA
-        print("Inicio Captcha")
+        logger.info("Inicio Captcha")
         select_elem = driver.find_element(By.ID, "frmPrincipal:dia")
         dia_select = Select(select_elem)
         # now = datetime.now()
         # last_date=(now-timedelta(days=1)).day
         # day_str=str(last_date)
-        # print('dia anterior: ', day_str)
+        # logger.info('dia anterior: {}'.format(day_str))       
         dia_select.select_by_visible_text("Todos")  # Selecciona "Todos"
 
-        print("Consultar")
+        logger.info("Consultar")
         time.sleep(3)
         fe=driver.find_element(By.ID, "frmPrincipal:btnBuscar")
         click_con_movimiento(driver, fe)
@@ -173,13 +198,13 @@ def main_ig():
         intentos = 0
         captcha_resuelto = False
         if verificar_captcha():
-            print("⚠️ Captcha detectado. Por favor, resuélvelo manualmente en el navegador.")
-            print(f"Tienes un máximo de {max_intentos} intentos de reintentos automáticos.\n")
+            logger.warning("⚠️ Captcha detectado. Por favor, resuélvelo manualmente en el navegador.")
+            logger.info(f"Tienes un máximo de {max_intentos} intentos de reintentos automáticos.\n")
 
             while intentos < max_intentos and not captcha_resuelto:
                 intentos += 1
                 tiempo_espera = 10  # segundos entre reintentos
-                print(f"[Intento {intentos}/{max_intentos}] Esperando resolución de captcha ({tiempo_espera}s)...")
+                logger.info(f"[Intento {intentos}/{max_intentos}] Esperando resolución de captcha ({tiempo_espera}s)...")
                 time.sleep(tiempo_espera)
                 
                 # Reintentar consulta
@@ -190,51 +215,51 @@ def main_ig():
                     
                     # Verificar si el captcha sigue visible
                     if not verificar_captcha():
-                        print("✓ Captcha resuelto exitosamente!")
+                        logger.info("✓ Captcha resuelto exitosamente!")
                         time.sleep(5)  # Espera extra para asegurar descarga completa
-                        print("SUBIENDO COMPROBANTES RECIBIDOS")
+                        logger.info("SUBIENDO COMPROBANTES RECIBIDOS")
                         #subir_comprobantes_recibidos()
                         captcha_resuelto = True
                     else:
-                        print(f"  → Captcha aún presente. Reintentando...")
+                        logger.error(f"  → Captcha aún presente. Reintentando...")
                         
                 except Exception as e:
-                    print(f"  → Error en reintentos: {str(e)}")
+                    logger.error(f"  → Error en reintentos: {str(e)}")
                     break
 
             if not captcha_resuelto:
-                print("⚠️ Captcha no se resolvió después de máximo de intentos.")
+                logger.warning("⚠️ Captcha no se resolvió después de máximo de intentos.")
         else:
-            print("✓ No se detectó captcha, continuando...")
+            logger.info("✓ No se detectó captcha, continuando...")
         # Descargar resultado
         try:
             descargar = driver.find_element(By.ID, "frmPrincipal:lnkTxtlistado")
             click_con_movimiento(driver, descargar)
-            print("✓ Archivo descargado correctamente!")
+            logger.info("✓ Archivo descargado correctamente!")
             time.sleep(5)  # Espera extra para asegurar descarga completa
-            print("SELECCIONAR DOCUMENTOS")
+            logger.info("SELECCIONAR DOCUMENTOS")
             seleccionar_documentos()
 
-            print("SUBIENDO COMPROBANTES RECIBIDOS")
+            logger.info("SUBIENDO COMPROBANTES RECIBIDOS")
             #subir_comprobantes_recibidos()
             time.sleep(2)
         except Exception as e:
-            print(f"✗ Error al descargar archivo: {str(e)}")
-        
+            logger.error(f"✗ Error al descargar archivo: {str(e)}")
+
         driver.close()
         driver.quit()
     
     except Exception as e:
-        print("Error principal:", str(e))
-        print("\nFixes rápidos:")
-        print("- Borra %APPDATA%\\undetected_chromedriver")
-        print("- Prueba version_main=143 o 145")
-        print("- pip install --upgrade undetected-chromedriver selenium")
+        logger.error("Error principal:", str(e))
+        logger.info("\nFixes rápidos:")
+        logger.info("- Borra %APPDATA%\\undetected_chromedriver")
+        logger.info("- Prueba version_main=143 o 145")
+        logger.info("- pip install --upgrade undetected-chromedriver selenium")
         sys.exit(1)
 
     change_file_name_factura(name_factura, name_factura_changed)
     change_file_name_nc(name_nc, name_nc_changed)
     change_file_name_compret(name_compret, name_compret_changed)
 
-    dividir_con_cabecera(ruta,1500, ruta_archivos)
+    # dividir_con_cabecera(ruta,1500, ruta_archivos)
 
