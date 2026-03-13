@@ -30,3 +30,232 @@
 2026-03-06 16:24:30,172 | INFO     | ejecucion_bot_recibidos_ig | SUBIDA DE DOCUMENTOS RECIBIDOS COMPROBANTES DE RETENCION
 2026-03-06 16:24:33,216 | ERROR    | ejecucion_bot_recibidos_ig | Error durante la subida de comprobantes de retención: [WinError 2] El sistema no puede encontrar el archivo especificado: 'F:\\Bots\\Bot_BMI\\DOC_ME\\0991433686001_Recibidos_CompRet.txt'
 2026-03-06 16:24:34,337 | INFO     | ejecucion_bot_recibidos_general | ===========FINALIZADA CARGA DE ARCHIVOS BMI=============
+2026-03-13 09:48:46,401 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:48:49,904 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:50:04,719 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:50:06,870 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:50:52,594 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:50:55,282 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:51:27,143 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:51:29,264 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:52:58,149 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:53:13,627 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:54:24,842 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:54:28,505 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:55:32,537 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:55:36,073 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 09:56:00,949 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 09:56:06,438 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 10:53:17,906 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 10:53:20,876 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 10:53:21,367 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-13 10:53:21,369 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO BOT IG=============
+2026-03-13 10:53:21,371 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 10:53:21,372 | DEBUG    | ejecucion_bot_recibidos_ig | Intentando con major version 144...
+2026-03-13 10:53:21,374 | DEBUG    | undetected_chromedriver.patcher | getting release number from /latest-versions-per-milestone-with-downloads.json
+2026-03-13 10:53:21,483 | DEBUG    | undetected_chromedriver.patcher | downloading from https://storage.googleapis.com/chrome-for-testing-public/144.0.7559.133/win32/chromedriver-win32.zip
+2026-03-13 10:53:30,638 | DEBUG    | undetected_chromedriver.patcher | unzipping C:\Users\ANALIS~1\AppData\Local\Temp\tmpb6v0wknw
+2026-03-13 10:53:30,859 | INFO     | undetected_chromedriver.patcher | patching driver executable C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 10:53:30,896 | DEBUG    | undetected_chromedriver.patcher | found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;window.cdc_adoQpoasnfa76pfcZLmcfl_JSON = window.JSON;window.cdc_adoQpoasnfa76pfcZLmcfl_Window = window.Window;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                                                                                                                                             '
+2026-03-13 10:53:30,914 | DEBUG    | undetected_chromedriver.patcher | patching took us 0.05 seconds
+2026-03-13 10:53:31,026 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 10:53:33,202 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe` in a child process with pid: 8640 using 0 to output -3
+2026-03-13 10:53:33,835 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:32065/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe', 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled', '--no-first-run', '--no-default-browser-check', '--process-per-site', '--disable-background-networking', '--disable-gpu', '--disable-features=DownloadBubble', '--remote-debugging-host=127.0.0.1', '--remote-debugging-port=32064', '--user-data-dir=C:\\Users\\ANALIS~1\\AppData\\Local\\Temp\\tmph7zv68b1', '--lang=es-ES', '--no-default-browser-check', '--no-first-run', '--no-sandbox', '--test-type', '--window-size=1920,1080', '--start-maximized', '--no-sandbox', '--log-level=0'], 'debuggerAddress': '127.0.0.1:32064'}}}}
+2026-03-13 10:53:33,838 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:32065
+2026-03-13 10:53:37,058 | DEBUG    | urllib3.connectionpool | http://localhost:32065 "POST /session HTTP/1.1" 500 0
+2026-03-13 10:53:37,093 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=500 | data={"value":{"error":"session not created","message":"session not created: cannot connect to chrome at 127.0.0.1:32064\nfrom session not created: This version of ChromeDriver only supports Chrome version 144\nCurrent browser version is 146.0.7680.71","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x6e5093\n\t0x6e50d4\n\t0x4db490\n\t0x516ae2\n\t0x515b1c\n\t0x50bbf5\n\t0x50ba16\n\t0x5547bf\n\t0x553fd7\n\t0x547f56\n\t0x5196c9\n\t0x51a484\n\t0x937e34\n\t0x9330c9\n\t0x950add\n\t0x6fdb38\n\t0x7058ad\n\t0x6ed848\n\t0x6eda12\n\t0x6d75fa\n\t0x75d07ba9\n\t0x76edc0cb\n\t0x76edc04f\n"}} | headers=HTTPHeaderDict({'Content-Length': '601', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:53:37,105 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:53:39,784 | INFO     | ejecucion_bot_recibidos_ig | 
+Fixes rápidos:
+2026-03-13 10:53:39,786 | INFO     | ejecucion_bot_recibidos_ig | - Borra %APPDATA%\undetected_chromedriver
+2026-03-13 10:53:39,787 | INFO     | ejecucion_bot_recibidos_ig | - Prueba version_main=143 o 145
+2026-03-13 10:53:39,789 | INFO     | ejecucion_bot_recibidos_ig | - pip install --upgrade undetected-chromedriver selenium
+2026-03-13 10:55:49,533 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 10:55:52,478 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 10:55:52,620 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-13 10:55:52,621 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO BOT IG=============
+2026-03-13 10:55:52,629 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 10:55:52,693 | DEBUG    | ejecucion_bot_recibidos_ig | Intentando con major version 146...
+2026-03-13 10:55:52,752 | DEBUG    | undetected_chromedriver.patcher | getting release number from /latest-versions-per-milestone-with-downloads.json
+2026-03-13 10:55:52,923 | DEBUG    | undetected_chromedriver.patcher | downloading from https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.76/win32/chromedriver-win32.zip
+2026-03-13 10:56:01,224 | DEBUG    | undetected_chromedriver.patcher | unzipping C:\Users\ANALIS~1\AppData\Local\Temp\tmp96w8szjk
+2026-03-13 10:56:01,396 | INFO     | undetected_chromedriver.patcher | patching driver executable C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 10:56:01,424 | DEBUG    | undetected_chromedriver.patcher | found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;window.cdc_adoQpoasnfa76pfcZLmcfl_JSON = window.JSON;window.cdc_adoQpoasnfa76pfcZLmcfl_Window = window.Window;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                                                                                                                                             '
+2026-03-13 10:56:01,441 | DEBUG    | undetected_chromedriver.patcher | patching took us 0.05 seconds
+2026-03-13 10:56:01,496 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 10:56:03,207 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe` in a child process with pid: 6116 using 0 to output -3
+2026-03-13 10:56:03,998 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe', 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled', '--no-first-run', '--no-default-browser-check', '--process-per-site', '--disable-background-networking', '--disable-gpu', '--disable-features=DownloadBubble', '--remote-debugging-host=127.0.0.1', '--remote-debugging-port=8251', '--user-data-dir=C:\\Users\\ANALIS~1\\AppData\\Local\\Temp\\tmpsnheh4ln', '--lang=es-ES', '--no-default-browser-check', '--no-first-run', '--no-sandbox', '--test-type', '--window-size=1920,1080', '--start-maximized', '--no-sandbox', '--log-level=0'], 'debuggerAddress': '127.0.0.1:8251'}}}}
+2026-03-13 10:56:03,999 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8252
+2026-03-13 10:56:04,137 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session HTTP/1.1" 200 0
+2026-03-13 10:56:04,138 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"146.0.7680.71","chrome":{"chromedriverVersion":"146.0.7680.76 (2a4a5f9f74e59de3011d74e1f2cff58924e2ef25-refs/branch-heads/7680_65@{#29})"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"127.0.0.1:8251"},"pageLoadStrategy":"normal","platformName":"","proxy":{},"setWindowRect":false,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"cc51d54eddd46eb1571a36dae15436c3"}} | headers=HTTPHeaderDict({'Content-Length': '760', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:04,139 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:04,139 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/window/maximize {}
+2026-03-13 10:56:04,302 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/window/maximize HTTP/1.1" 200 0
+2026-03-13 10:56:04,303 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"height":736,"width":1382,"x":-8,"y":-8}} | headers=HTTPHeaderDict({'Content-Length': '51', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:04,304 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:04,309 | INFO     | ejecucion_bot_recibidos_ig | ¡Driver iniciado OK!
+2026-03-13 10:56:04,317 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/timeouts {'pageLoad': 60000}
+2026-03-13 10:56:04,333 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/timeouts HTTP/1.1" 200 0
+2026-03-13 10:56:04,351 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:04,355 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:04,355 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/url {'url': 'https://srienlinea.sri.gob.ec/auth/realms/Internet/protocol/openid-connect/auth?client_id=app-sri-cl...'}
+2026-03-13 10:56:07,031 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/url HTTP/1.1" 200 0
+2026-03-13 10:56:07,032 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:07,033 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:17,035 | INFO     | ejecucion_bot_recibidos_ig | SRI cargó → URL final:
+2026-03-13 10:56:17,047 | DEBUG    | selenium.webdriver.remote.remote_connection | GET http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/title {}
+2026-03-13 10:56:17,106 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "GET /session/cc51d54eddd46eb1571a36dae15436c3/title HTTP/1.1" 200 0
+2026-03-13 10:56:17,106 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":"SRI en Línea - Login"} | headers=HTTPHeaderDict({'Content-Length': '33', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:17,107 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:17,117 | INFO     | ejecucion_bot_recibidos_ig | Título de la página: SRI en Línea - Login
+2026-03-13 10:56:20,119 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element {'using': 'css selector', 'value': '[id="usuario"]'}
+2026-03-13 10:56:20,148 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element HTTP/1.1" 200 0
+2026-03-13 10:56:20,148 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.2"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:20,149 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:20,153 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element/f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.2/value {'text': '1791927559001', 'value': ['1', '7', '9', '1', '9', '2', '7', '5', '5', '9', '0', '0', '1']}
+2026-03-13 10:56:20,275 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element/f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.2/value HTTP/1.1" 200 0
+2026-03-13 10:56:20,276 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:20,278 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:20,279 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element {'using': 'css selector', 'value': '[id="ciAdicional"]'}
+2026-03-13 10:56:20,294 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element HTTP/1.1" 200 0
+2026-03-13 10:56:20,297 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.4"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:20,298 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:20,298 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element/f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.4/value {'text': '1711542959', 'value': ['1', '7', '1', '1', '5', '4', '2', '9', '5', '9']}
+2026-03-13 10:56:20,393 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element/f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.4/value HTTP/1.1" 200 0
+2026-03-13 10:56:20,396 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:20,396 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:20,397 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element {'using': 'css selector', 'value': '[id="password"]'}
+2026-03-13 10:56:20,415 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element HTTP/1.1" 200 0
+2026-03-13 10:56:20,416 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.5"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:20,417 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:20,417 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element/f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.5/value {'text': 'ASDasd123.', 'value': ['A', 'S', 'D', 'a', 's', 'd', '1', '2', '3', '.']}
+2026-03-13 10:56:20,502 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element/f.B0C8781A178E00DB8E3BB7B9632D4790.d.99EECB7A00F592FC4E6AB91804AB2664.e.5/value HTTP/1.1" 200 0
+2026-03-13 10:56:20,504 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:20,506 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:23,507 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:8252/session/cc51d54eddd46eb1571a36dae15436c3/element {'using': 'css selector', 'value': '[id="kc-login"]'}
+2026-03-13 10:56:23,515 | DEBUG    | urllib3.connectionpool | http://localhost:8252 "POST /session/cc51d54eddd46eb1571a36dae15436c3/element HTTP/1.1" 404 0
+2026-03-13 10:56:23,516 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=404 | data={"value":{"error":"invalid session id","message":"invalid session id: session deleted as the browser has closed the connection\nfrom disconnected: not connected to DevTools\n  (Session info: chrome=146.0.7680.71)","stacktrace":"\tundetected_chromedriver!GetHandleVerifier [0x46eea3+10893]\n\tundetected_chromedriver!GetHandleVerifier [0x46efd4+109c4]\n\tundetected_chromedriver!(No symbol) [0x252130]\n\tundetected_chromedriver!(No symbol) [0x24106e]\n\tundetected_chromedriver!(No symbol) [0x25fbf9]\n\tundetected_chromedriver!(No symbol) [0x2c44fc]\n\tundetected_chromedriver!(No symbol) [0x2da309]\n\tundetected_chromedriver!(No symbol) [0x2bd896]\n\tundetected_chromedriver!(No symbol) [0x290229]\n\tundetected_chromedriver!(No symbol) [0x290fe4]\n\tundetected_chromedriver!GetHandleVerifier [0x6d2029+273a19]\n\tundetected_chromedriver!GetHandleVerifier [0x6cd633+26f023]\n\tundetected_chromedriver!GetHandleVerifier [0x6eb35b+28cd4b]\n\tundetected_chromedriver!GetHandleVerifier [0x487e18+29808]\n\tundetected_chromedriver!GetHandleVerifier [0x48fb5d+3154d]\n\tundetected_chromedriver!GetHandleVerifier [0x4778c8+192b8]\n\tundetected_chromedriver!GetHandleVerifier [0x477a92+19482]\n\tundetected_chromedriver!GetHandleVerifier [0x4611aa+2b9a]\n\tKERNEL32!BaseThreadInitThunk [0x75d07ba9+19]\n\tntdll!RtlInitializeExceptionChain [0x76edc0cb+6b]\n\tntdll!RtlClearBits [0x76edc04f+bf]\n"}} | headers=HTTPHeaderDict({'Content-Length': '1392', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 10:56:23,522 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 10:56:23,591 | INFO     | ejecucion_bot_recibidos_ig | 
+Fixes rápidos:
+2026-03-13 10:56:23,592 | INFO     | ejecucion_bot_recibidos_ig | - Borra %APPDATA%\undetected_chromedriver
+2026-03-13 10:56:23,592 | INFO     | ejecucion_bot_recibidos_ig | - Prueba version_main=143 o 145
+2026-03-13 10:56:23,593 | INFO     | ejecucion_bot_recibidos_ig | - pip install --upgrade undetected-chromedriver selenium
+2026-03-13 11:56:50,863 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 11:56:53,770 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 11:56:53,999 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-13 11:56:54,008 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO BOT IG=============
+2026-03-13 11:56:54,026 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 11:56:54,028 | DEBUG    | ejecucion_bot_recibidos_ig | Intentando con major version 144...
+2026-03-13 11:56:54,030 | DEBUG    | undetected_chromedriver.patcher | getting release number from /latest-versions-per-milestone-with-downloads.json
+2026-03-13 11:56:54,147 | DEBUG    | undetected_chromedriver.patcher | downloading from https://storage.googleapis.com/chrome-for-testing-public/144.0.7559.133/win32/chromedriver-win32.zip
+2026-03-13 11:57:01,851 | DEBUG    | undetected_chromedriver.patcher | unzipping C:\Users\ANALIS~1\AppData\Local\Temp\tmpw0yy5y1q
+2026-03-13 11:57:02,065 | INFO     | undetected_chromedriver.patcher | patching driver executable C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 11:57:02,103 | DEBUG    | undetected_chromedriver.patcher | found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;window.cdc_adoQpoasnfa76pfcZLmcfl_JSON = window.JSON;window.cdc_adoQpoasnfa76pfcZLmcfl_Window = window.Window;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                                                                                                                                             '
+2026-03-13 11:57:02,116 | DEBUG    | undetected_chromedriver.patcher | patching took us 0.05 seconds
+2026-03-13 11:57:02,172 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 11:57:04,939 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe` in a child process with pid: 2248 using 0 to output -3
+2026-03-13 11:57:05,662 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:9855/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe', 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled', '--no-first-run', '--no-default-browser-check', '--process-per-site', '--disable-background-networking', '--disable-gpu', '--disable-features=DownloadBubble', '--remote-debugging-host=127.0.0.1', '--remote-debugging-port=9854', '--user-data-dir=C:\\Users\\ANALIS~1\\AppData\\Local\\Temp\\tmpao2ughyb', '--lang=es-ES', '--no-default-browser-check', '--no-first-run', '--no-sandbox', '--test-type', '--window-size=1920,1080', '--start-maximized', '--no-sandbox', '--log-level=0'], 'debuggerAddress': '127.0.0.1:9854'}}}}
+2026-03-13 11:57:05,664 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:9855
+2026-03-13 11:57:05,683 | DEBUG    | urllib3.connectionpool | http://localhost:9855 "POST /session HTTP/1.1" 500 0
+2026-03-13 11:57:05,684 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=500 | data={"value":{"error":"session not created","message":"session not created: cannot connect to chrome at 127.0.0.1:9854\nfrom session not created: This version of ChromeDriver only supports Chrome version 144\nCurrent browser version is 146.0.7680.71","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0xe85093\n\t0xe850d4\n\t0xc7b490\n\t0xcb6ae2\n\t0xcb5b1c\n\t0xcabbf5\n\t0xcaba16\n\t0xcf47bf\n\t0xcf3fd7\n\t0xce7f56\n\t0xcb96c9\n\t0xcba484\n\t0x10d7e34\n\t0x10d30c9\n\t0x10f0add\n\t0xe9db38\n\t0xea58ad\n\t0xe8d848\n\t0xe8da12\n\t0xe775fa\n\t0x75d07ba9\n\t0x76edc0cb\n\t0x76edc04f\n"}} | headers=HTTPHeaderDict({'Content-Length': '603', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 11:57:05,686 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 11:57:08,376 | INFO     | ejecucion_bot_recibidos_ig | 
+Fixes rápidos:
+2026-03-13 11:57:08,376 | INFO     | ejecucion_bot_recibidos_ig | - Borra %APPDATA%\undetected_chromedriver
+2026-03-13 11:57:08,377 | INFO     | ejecucion_bot_recibidos_ig | - Prueba version_main=143 o 145
+2026-03-13 11:57:08,377 | INFO     | ejecucion_bot_recibidos_ig | - pip install --upgrade undetected-chromedriver selenium
+2026-03-13 11:57:10,000 | INFO     | ejecucion_bot_recibidos_ig | Correo de error enviado correctamente.
+2026-03-13 12:02:57,586 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 12:03:00,159 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 12:03:00,372 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-13 12:03:00,373 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO BOT IG=============
+2026-03-13 12:03:00,381 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 12:03:00,382 | DEBUG    | ejecucion_bot_recibidos_ig | Intentando con major version 144...
+2026-03-13 12:03:00,384 | DEBUG    | undetected_chromedriver.patcher | getting release number from /latest-versions-per-milestone-with-downloads.json
+2026-03-13 12:03:00,511 | DEBUG    | undetected_chromedriver.patcher | downloading from https://storage.googleapis.com/chrome-for-testing-public/144.0.7559.133/win32/chromedriver-win32.zip
+2026-03-13 12:03:07,544 | DEBUG    | undetected_chromedriver.patcher | unzipping C:\Users\ANALIS~1\AppData\Local\Temp\tmpvcq35zq0
+2026-03-13 12:03:07,703 | INFO     | undetected_chromedriver.patcher | patching driver executable C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 12:03:07,731 | DEBUG    | undetected_chromedriver.patcher | found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;window.cdc_adoQpoasnfa76pfcZLmcfl_JSON = window.JSON;window.cdc_adoQpoasnfa76pfcZLmcfl_Window = window.Window;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                                                                                                                                             '
+2026-03-13 12:03:07,745 | DEBUG    | undetected_chromedriver.patcher | patching took us 0.04 seconds
+2026-03-13 12:03:07,786 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 12:03:09,429 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe` in a child process with pid: 11076 using 0 to output -3
+2026-03-13 12:03:10,714 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:56466/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe', 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled', '--no-first-run', '--no-default-browser-check', '--process-per-site', '--disable-background-networking', '--disable-gpu', '--disable-features=DownloadBubble', '--remote-debugging-host=127.0.0.1', '--remote-debugging-port=56465', '--user-data-dir=C:\\Users\\ANALIS~1\\AppData\\Local\\Temp\\tmpcza573_u', '--lang=es-ES', '--no-default-browser-check', '--no-first-run', '--no-sandbox', '--test-type', '--window-size=1920,1080', '--start-maximized', '--no-sandbox', '--log-level=0'], 'debuggerAddress': '127.0.0.1:56465'}}}}
+2026-03-13 12:03:10,718 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:56466
+2026-03-13 12:03:10,763 | DEBUG    | urllib3.connectionpool | http://localhost:56466 "POST /session HTTP/1.1" 500 0
+2026-03-13 12:03:10,777 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=500 | data={"value":{"error":"session not created","message":"session not created: cannot connect to chrome at 127.0.0.1:56465\nfrom session not created: This version of ChromeDriver only supports Chrome version 144\nCurrent browser version is 146.0.7680.71","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0xf35093\n\t0xf350d4\n\t0xd2b490\n\t0xd66ae2\n\t0xd65b1c\n\t0xd5bbf5\n\t0xd5ba16\n\t0xda47bf\n\t0xda3fd7\n\t0xd97f56\n\t0xd696c9\n\t0xd6a484\n\t0x1187e34\n\t0x11830c9\n\t0x11a0add\n\t0xf4db38\n\t0xf558ad\n\t0xf3d848\n\t0xf3da12\n\t0xf275fa\n\t0x75d07ba9\n\t0x76edc0cb\n\t0x76edc04f\n"}} | headers=HTTPHeaderDict({'Content-Length': '604', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 12:03:10,780 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 12:03:13,443 | INFO     | ejecucion_bot_recibidos_ig | 
+Fixes rápidos:
+2026-03-13 12:03:13,443 | INFO     | ejecucion_bot_recibidos_ig | - Borra %APPDATA%\undetected_chromedriver
+2026-03-13 12:03:13,444 | INFO     | ejecucion_bot_recibidos_ig | - Prueba version_main=143 o 145
+2026-03-13 12:03:13,444 | INFO     | ejecucion_bot_recibidos_ig | - pip install --upgrade undetected-chromedriver selenium
+2026-03-13 12:03:15,160 | INFO     | ejecucion_bot_recibidos_ig | Correo de error enviado correctamente.
+2026-03-13 12:07:58,939 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 12:08:01,374 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 12:08:01,490 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-13 12:08:01,492 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO BOT IG=============
+2026-03-13 12:08:01,503 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 12:08:01,505 | DEBUG    | ejecucion_bot_recibidos_ig | Intentando con major version 144...
+2026-03-13 12:08:01,512 | DEBUG    | undetected_chromedriver.patcher | getting release number from /latest-versions-per-milestone-with-downloads.json
+2026-03-13 12:08:01,643 | DEBUG    | undetected_chromedriver.patcher | downloading from https://storage.googleapis.com/chrome-for-testing-public/144.0.7559.133/win32/chromedriver-win32.zip
+2026-03-13 12:08:13,142 | DEBUG    | undetected_chromedriver.patcher | unzipping C:\Users\ANALIS~1\AppData\Local\Temp\tmp3y_q1smu
+2026-03-13 12:08:20,975 | INFO     | undetected_chromedriver.patcher | patching driver executable C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 12:08:21,004 | DEBUG    | undetected_chromedriver.patcher | found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;window.cdc_adoQpoasnfa76pfcZLmcfl_JSON = window.JSON;window.cdc_adoQpoasnfa76pfcZLmcfl_Window = window.Window;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                                                                                                                                             '
+2026-03-13 12:08:21,028 | DEBUG    | undetected_chromedriver.patcher | patching took us 0.05 seconds
+2026-03-13 12:08:21,069 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 12:08:21,953 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe` in a child process with pid: 7788 using 0 to output -3
+2026-03-13 12:08:23,422 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:28321/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe', 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled', '--no-first-run', '--no-default-browser-check', '--process-per-site', '--disable-background-networking', '--disable-gpu', '--disable-features=DownloadBubble', '--remote-debugging-host=127.0.0.1', '--remote-debugging-port=28320', '--user-data-dir=C:\\Users\\ANALIS~1\\AppData\\Local\\Temp\\tmpn9rt_vie', '--lang=es-ES', '--no-default-browser-check', '--no-first-run', '--no-sandbox', '--test-type', '--window-size=1920,1080', '--start-maximized', '--no-sandbox', '--log-level=0'], 'debuggerAddress': '127.0.0.1:28320'}}}}
+2026-03-13 12:08:23,428 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:28321
+2026-03-13 12:08:23,484 | DEBUG    | urllib3.connectionpool | http://localhost:28321 "POST /session HTTP/1.1" 500 0
+2026-03-13 12:08:23,504 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=500 | data={"value":{"error":"session not created","message":"session not created: cannot connect to chrome at 127.0.0.1:28320\nfrom session not created: This version of ChromeDriver only supports Chrome version 144\nCurrent browser version is 146.0.7680.71","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x475093\n\t0x4750d4\n\t0x26b490\n\t0x2a6ae2\n\t0x2a5b1c\n\t0x29bbf5\n\t0x29ba16\n\t0x2e47bf\n\t0x2e3fd7\n\t0x2d7f56\n\t0x2a96c9\n\t0x2aa484\n\t0x6c7e34\n\t0x6c30c9\n\t0x6e0add\n\t0x48db38\n\t0x4958ad\n\t0x47d848\n\t0x47da12\n\t0x4675fa\n\t0x75d07ba9\n\t0x76edc0cb\n\t0x76edc04f\n"}} | headers=HTTPHeaderDict({'Content-Length': '601', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 12:08:23,506 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 12:08:26,199 | INFO     | ejecucion_bot_recibidos_ig | 
+Fixes rápidos:
+2026-03-13 12:08:26,200 | INFO     | ejecucion_bot_recibidos_ig | - Borra %APPDATA%\undetected_chromedriver
+2026-03-13 12:08:26,201 | INFO     | ejecucion_bot_recibidos_ig | - Prueba version_main=143 o 145
+2026-03-13 12:08:26,201 | INFO     | ejecucion_bot_recibidos_ig | - pip install --upgrade undetected-chromedriver selenium
+2026-03-13 12:08:28,043 | INFO     | ejecucion_bot_recibidos_ig | Correo de error enviado correctamente.
+2026-03-13 12:09:11,889 | INFO     | ejecucion_bot_recibidos_me | Logging iniciado → logs/ejecucion_bot_recibidos_me.log
+2026-03-13 12:09:14,157 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 12:09:14,248 | INFO     | ejecucion_bot_recibidos_general | Logging iniciado → logs/ejecucion_bot_recibidos_general.log
+2026-03-13 12:09:14,249 | INFO     | ejecucion_bot_recibidos_general | ===========INICIANDO BOT IG=============
+2026-03-13 12:09:14,258 | INFO     | ejecucion_bot_recibidos_ig | Logging iniciado → logs/ejecucion_bot_recibidos_ig.log
+2026-03-13 12:09:14,259 | DEBUG    | ejecucion_bot_recibidos_ig | Intentando con major version 144...
+2026-03-13 12:09:14,264 | DEBUG    | undetected_chromedriver.patcher | getting release number from /latest-versions-per-milestone-with-downloads.json
+2026-03-13 12:09:14,367 | DEBUG    | undetected_chromedriver.patcher | downloading from https://storage.googleapis.com/chrome-for-testing-public/144.0.7559.133/win32/chromedriver-win32.zip
+2026-03-13 12:09:23,813 | DEBUG    | undetected_chromedriver.patcher | unzipping C:\Users\ANALIS~1\AppData\Local\Temp\tmpvibzpfy4
+2026-03-13 12:09:23,976 | INFO     | undetected_chromedriver.patcher | patching driver executable C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 12:09:24,011 | DEBUG    | undetected_chromedriver.patcher | found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;window.cdc_adoQpoasnfa76pfcZLmcfl_JSON = window.JSON;window.cdc_adoQpoasnfa76pfcZLmcfl_Window = window.Window;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                                                                                                                                             '
+2026-03-13 12:09:24,028 | DEBUG    | undetected_chromedriver.patcher | patching took us 0.05 seconds
+2026-03-13 12:09:24,075 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-03-13 12:09:25,500 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\Analista 3\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe` in a child process with pid: 5604 using 0 to output -3
+2026-03-13 12:09:26,324 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:38559/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe', 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled', '--no-first-run', '--no-default-browser-check', '--process-per-site', '--disable-background-networking', '--disable-gpu', '--disable-features=DownloadBubble', '--remote-debugging-host=127.0.0.1', '--remote-debugging-port=38558', '--user-data-dir=C:\\Users\\ANALIS~1\\AppData\\Local\\Temp\\tmps8pxv_9r', '--lang=es-ES', '--no-default-browser-check', '--no-first-run', '--no-sandbox', '--test-type', '--window-size=1920,1080', '--start-maximized', '--no-sandbox', '--log-level=0'], 'debuggerAddress': '127.0.0.1:38558'}}}}
+2026-03-13 12:09:26,327 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:38559
+2026-03-13 12:09:26,375 | DEBUG    | urllib3.connectionpool | http://localhost:38559 "POST /session HTTP/1.1" 500 0
+2026-03-13 12:09:26,382 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=500 | data={"value":{"error":"session not created","message":"session not created: cannot connect to chrome at 127.0.0.1:38558\nfrom session not created: This version of ChromeDriver only supports Chrome version 144\nCurrent browser version is 146.0.7680.71","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x9a5093\n\t0x9a50d4\n\t0x79b490\n\t0x7d6ae2\n\t0x7d5b1c\n\t0x7cbbf5\n\t0x7cba16\n\t0x8147bf\n\t0x813fd7\n\t0x807f56\n\t0x7d96c9\n\t0x7da484\n\t0xbf7e34\n\t0xbf30c9\n\t0xc10add\n\t0x9bdb38\n\t0x9c58ad\n\t0x9ad848\n\t0x9ada12\n\t0x9975fa\n\t0x75d07ba9\n\t0x76edc0cb\n\t0x76edc04f\n"}} | headers=HTTPHeaderDict({'Content-Length': '601', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-03-13 12:09:26,384 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-03-13 12:09:28,932 | INFO     | ejecucion_bot_recibidos_ig | 
+Fixes rápidos:
+2026-03-13 12:09:28,932 | INFO     | ejecucion_bot_recibidos_ig | - Borra %APPDATA%\undetected_chromedriver
+2026-03-13 12:09:28,933 | INFO     | ejecucion_bot_recibidos_ig | - Prueba version_main=143 o 145
+2026-03-13 12:09:28,933 | INFO     | ejecucion_bot_recibidos_ig | - pip install --upgrade undetected-chromedriver selenium
+2026-03-13 12:09:30,714 | INFO     | ejecucion_bot_recibidos_ig | Correo de error enviado correctamente.

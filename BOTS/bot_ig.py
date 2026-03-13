@@ -7,6 +7,7 @@ from BOTS.documents import click_con_movimiento
 from BOTS.SCRIPTS.split_file import dividir_con_cabecera
 from BOTS.SCRIPTS.change_names import change_file_name_factura,change_file_name_nc, change_file_name_compret 
 from utils.loggin_setup import configurar_logging
+from utils.correo_errores import enviar_correo_error
 
 import undetected_chromedriver as uc
 import time
@@ -35,7 +36,7 @@ def main_ig():
     )
 
 
-    CHROME_MAJOR_VERSION = 144
+    CHROME_MAJOR_VERSION = 146
     BRAVE_PATH = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
     SRI_URL = "https://srienlinea.sri.gob.ec/auth/realms/Internet/protocol/openid-connect/auth?client_id=app-sri-claves-angular&redirect_uri=https%3A%2F%2Fsrienlinea.sri.gob.ec%2Fsri-en-linea%2F%2Fcontribuyente%2Fperfil&state=04b7b077-e0ef-489f-81df-fa7e8b371002&nonce=79d20507-d1a2-4f75-843b-0f0f48e13c3a&response_mode=fragment&response_type=code&scope=openid"
 
@@ -255,6 +256,13 @@ def main_ig():
         logger.info("- Borra %APPDATA%\\undetected_chromedriver")
         logger.info("- Prueba version_main=143 o 145")
         logger.info("- pip install --upgrade undetected-chromedriver selenium")
+
+        try:
+            enviar_correo_error()
+            logger.info("Correo de error enviado correctamente.")
+        except Exception as mail_err:
+            logger.error(f"No se pudo enviar el correo de error: {mail_err}")
+
         sys.exit(1)
 
     change_file_name_factura(name_factura, name_factura_changed)
