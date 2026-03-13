@@ -6,6 +6,7 @@ from selenium.webdriver.support.select import Select
 from utils.loggin_setup import configurar_logging
 from BOTS.documents import click_con_movimiento
 from BOTS.SCRIPTS.change_names import change_file_name_factura,change_file_name_nc, change_file_name_compret 
+from dotenv import load_dotenv
 
 import undetected_chromedriver as uc
 import time, datetime, random
@@ -13,24 +14,26 @@ from datetime import datetime, timedelta
 import sys, os
 import logging
 
-CHROME_MAJOR_VERSION = 146
+
+load_dotenv()
+#CHROME_MAJOR_VERSION = 146
 BRAVE_PATH = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-SRI_URL = "https://srienlinea.sri.gob.ec/auth/realms/Internet/protocol/openid-connect/auth?client_id=app-sri-claves-angular&redirect_uri=https%3A%2F%2Fsrienlinea.sri.gob.ec%2Fsri-en-linea%2F%2Fcontribuyente%2Fperfil&state=04b7b077-e0ef-489f-81df-fa7e8b371002&nonce=79d20507-d1a2-4f75-843b-0f0f48e13c3a&response_mode=fragment&response_type=code&scope=openid"
+SRI_URL = os.getenv("URL_SRI")
 
 
-name_factura="F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos.txt" # RUTA DE FACTURA IG
-name_factura_changed="F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos_Factura.txt"
+name_factura=os.getenv("ME_FACTURA") # RUTA DE FACTURA IG
+name_factura_changed=os.getenv("ME_FACTURA_CHANGE")
 
-name_nc="F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos (1).txt" # RUTA DE NC IG
-name_nc_changed="F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos_NC.txt"# RUTA DE NC CAMBIADA IG
+name_nc=os.getenv("ME_NC") # RUTA DE NC IG
+name_nc_changed=os.getenv("ME_NC_CHANGE")# RUTA DE NC CAMBIADA IG
 
-name_compret="F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos (2).txt" # RUTA DE COMPROBANTE DE RETENCION IG
-name_compret_changed="F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos_CompRet.txt" # RUTA DE COMPROBANTE DE RETENCION CAMBIADA IG
+name_compret=os.getenv("ME_COMPRET") # RUTA DE COMPROBANTE DE RETENCION IG
+name_compret_changed=os.getenv("ME_COMPRET_CHANGE") # RUTA DE COMPROBANTE DE RETENCION CAMBIADA IG
 
 # MAS ECUADOR
-RUC="0991433686001"
-IDENTIFICACION="1711542959"
-PASSWORD_SRI="ASDasd123."
+RUC=os.getenv("RUC_ME")
+IDENTIFICACION=os.getenv("IDENTIFICACION_ME")
+PASSWORD_SRI=os.getenv("PASSWORD_SRI_ME")
 
 logger, ruta_log = configurar_logging(
         nombre_script="ejecucion_bot_recibidos_me",
@@ -80,7 +83,7 @@ def main_me():
         logger.info(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
         driver = uc.Chrome(
             options=options,
-            version_main=CHROME_MAJOR_VERSION,
+            #version_main=CHROME_MAJOR_VERSION,
             use_subprocess=True,
             suppress_welcome=True
         )

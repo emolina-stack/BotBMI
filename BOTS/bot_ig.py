@@ -8,23 +8,25 @@ from BOTS.SCRIPTS.split_file import dividir_con_cabecera
 from BOTS.SCRIPTS.change_names import change_file_name_factura,change_file_name_nc, change_file_name_compret 
 from utils.loggin_setup import configurar_logging
 from utils.correo_errores import enviar_correo_error
+from dotenv import load_dotenv
 
 import undetected_chromedriver as uc
 import time
-import sys, os
+import sys
+import os
 import logging
 
 ruta="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos_Factura.txt" # RUTA DE FACTURA IG
 ruta_archivos="F:/Bots/Bot_BMI/DOC_IG/SPLIT_FILES" # RUTA DE ARCHIVOS DIVIDIDOS IG
+load_dotenv()
+name_factura=os.getenv("IG_FACTURAS") # RUTA DE FACTURA IG
+name_factura_changed=os.getenv("IG_FACTURAS_CHANGED")
 
-name_factura="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos.txt" # RUTA DE FACTURA IG
-name_factura_changed="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos_Factura.txt"
+name_nc=os.getenv("IG_NC") # RUTA DE NC IG
+name_nc_changed=os.getenv("IG_NC_CHANGED")# RUTA DE NC CAMBIADA IG
 
-name_nc="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos (1).txt" # RUTA DE NC IG
-name_nc_changed="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos_NC.txt"# RUTA DE NC CAMBIADA IG
-
-name_compret="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos (2).txt" # RUTA DE COMPROBANTE DE RETENCION IG
-name_compret_changed="F:/Bots/Bot_BMI/DOC_IG/1791927559001_Recibidos_CompRet.txt" # RUTA DE COMPROBANTE DE RETENCION CAMBIADA IG
+name_compret=os.getenv("IG_COMPRET")
+name_compret_changed=os.getenv("IG_COMPRET_CHANGED")
 
 def main_ig():
 
@@ -35,16 +37,15 @@ def main_ig():
         mostrar_consola=True
     )
 
-
     CHROME_MAJOR_VERSION = 146
     BRAVE_PATH = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-    SRI_URL = "https://srienlinea.sri.gob.ec/auth/realms/Internet/protocol/openid-connect/auth?client_id=app-sri-claves-angular&redirect_uri=https%3A%2F%2Fsrienlinea.sri.gob.ec%2Fsri-en-linea%2F%2Fcontribuyente%2Fperfil&state=04b7b077-e0ef-489f-81df-fa7e8b371002&nonce=79d20507-d1a2-4f75-843b-0f0f48e13c3a&response_mode=fragment&response_type=code&scope=openid"
+    SRI_URL = os.getenv("URL_SRI")
 
     # FACTURAS, NC, COMPROBANTES DE RETENCION
     # IGUALAS
-    RUC="1791927559001"
-    IDENTIFICACION="1711542959"
-    PASSWORD_SRI="ASDasd123."
+    RUC=os.getenv("RUC_IG")
+    IDENTIFICACION=os.getenv("IDENTIFICACION_IG")
+    PASSWORD_SRI=os.getenv("PASSWORD_SRI_IG")
 
     DOWNLOAD_DIR = os.path.abspath("F:/Bots/Bot_BMI/DOC_IG")  # ← RUTA IGUALAS
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
@@ -83,7 +84,7 @@ def main_ig():
         logger.debug(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
         driver = uc.Chrome(
             options=options,
-            version_main=CHROME_MAJOR_VERSION,
+            #version_main=CHROME_MAJOR_VERSION,
             use_subprocess=True,
             suppress_welcome=True
         )
@@ -263,7 +264,6 @@ def main_ig():
         except Exception as mail_err:
             logger.error(f"No se pudo enviar el correo de error: {mail_err}")
 
-        sys.exit(1)
 
     change_file_name_factura(name_factura, name_factura_changed)
     change_file_name_nc(name_nc, name_nc_changed)
