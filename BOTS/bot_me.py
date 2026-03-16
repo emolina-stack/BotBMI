@@ -80,7 +80,7 @@ def main_me():
 
     try:
         wait = WebDriverWait(driver, 20)
-        logger.info(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
+        logger.info(f"Intentando con major version")
         driver = uc.Chrome(
             options=options,
             #version_main=CHROME_MAJOR_VERSION,
@@ -108,8 +108,15 @@ def main_me():
         time.sleep(3)
         driver.find_element("id", "kc-login").click()
         time.sleep(10)  
-        
-        #//*[@id="mySidebar2"]/div[3]/div/button
+
+        #//*[@id="mat-dialog-0"]
+        dialog=driver.find_element('id','mat-dialog-0')
+        print(f"DIALOG: {dialog}")
+        if dialog:
+            #//*[@id="sri-menu"]
+            menu_btn=driver.find_element(By.XPATH,'//*[@id="sri-menu"]')
+            click_con_movimiento(driver, menu_btn)
+
         time.sleep(10)  
         logger.info("MENU")
         fe=driver.find_element(By.XPATH, '//button[@title="Facturación Electrónica"]')
@@ -245,17 +252,17 @@ def main_me():
             #subir_comprobantes_recibidos()
             time.sleep(2)
         except Exception as e:
-            logger.error(f"✗ Error al descargar archivo: {str(e)}")
+            logger.error("✗ Error al descargar archivo: no existen documentos")
 
     except Exception as e:
-        logger.error("Error principal:", str(e))
+        logger.error("Error principal:")
         logger.info("\nFixes rápidos:")
         logger.info("- Borra %APPDATA%\\undetected_chromedriver")
         logger.info("- Prueba version_main=143 o 145")
         logger.info("- pip install --upgrade undetected-chromedriver selenium")
         sys.exit(1)
 
-    change_file_name_factura(name_factura, name_factura_changed)
-    change_file_name_nc(name_nc, name_nc_changed)
-    change_file_name_compret(name_compret, name_compret_changed)
+    # change_file_name_factura(name_factura, name_factura_changed)
+    # change_file_name_nc(name_nc, name_nc_changed)
+    # change_file_name_compret(name_compret, name_compret_changed)
 

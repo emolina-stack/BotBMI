@@ -36,9 +36,9 @@ rutas_bmi={
 }
 
 rutas_me={
-    "ME_FACT":Path(r"F:\\Bots\Bot_BMI\DOC_ME\0991433686001_Recibidos_Factura.txt"),#  FACTURAS
-    "ME_NC":Path(r"F:\\Bots\Bot_BMI\DOC_ME\0991433686001_Recibidos_NC.txt"),# NOTAS DE CREDITO
-    "ME_COMPRET":Path(r"F:\\Bots\Bot_BMI\DOC_ME\0991433686001_Recibidos_CompRet.txt"),#   COMPROBANTES DE RETENCION
+    "ME_FACT":Path(r"F:\\Bots\Bot_BMI\DOC_ME\0991433686001_Recibidos.txt"),#  FACTURAS
+    "ME_NC":Path(r"F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos (1).txt"),# NOTAS DE CREDITO
+    "ME_COMPRET":Path(r"F:/Bots/Bot_BMI/DOC_ME/0991433686001_Recibidos (2).txt"),#   COMPROBANTES DE RETENCION
 }
 
 # BMI

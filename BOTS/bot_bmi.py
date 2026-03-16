@@ -17,13 +17,13 @@ import logging
 ruta="F:/Bots/Bot_BMI/DOC_BMI/1791301692001_Recibidos_Factura.txt" # RUTA DE FACTURA IG
 ruta_archivos="F:/Bots/Bot_BMI/DOC_BMI/SPLIT_FILES" # RUTA DE ARCHIVOS DIVIDIDOS IG
 load_dotenv()
-name_factura=os.getenv("BMI_FACTURAS"), # RUTA DE FACTURA IG
+name_factura=os.getenv("BMI_FACTURAS") # RUTA DE FACTURA IG
 name_factura_changed=os.getenv("BMI_FACTURAS_CHANGED")
 
-name_nc=os.getenv("BMI_NC"), # RUTA DE NC IG
+name_nc=os.getenv("BMI_NC") # RUTA DE NC IG
 name_nc_changed=os.getenv("BMI_NC_CHANGED")
 
-name_compret=os.getenv("BMI_COMPRET"), # RUTA DE COMPROBANTE DE RETENCION IG
+name_compret=os.getenv("BMI_COMPRET") # RUTA DE COMPROBANTE DE RETENCION IG
 name_compret_changed=os.getenv("BMI_COMPRET_CHANGED") # RUTA DE COMPROBANTE DE RETENCION CAMBIADA IG
 
 
@@ -108,6 +108,13 @@ def main_bmi():
         time.sleep(3)
         driver.find_element("id", "kc-login").click()
         time.sleep(10)  
+        #//*[@id="mat-dialog-0"]
+        dialog=driver.find_element('id','mat-dialog-0')
+        print(f"DIALOG: {dialog}")
+        if dialog:
+            #//*[@id="sri-menu"]
+            menu_btn=driver.find_element(By.XPATH,'//*[@id="sri-menu"]')
+            click_con_movimiento(driver, menu_btn)
         
         #//*[@id="mySidebar2"]/div[3]/div/button
         time.sleep(10)  
