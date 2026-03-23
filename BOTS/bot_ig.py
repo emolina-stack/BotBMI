@@ -80,7 +80,6 @@ def main_ig():
     driver = None
 
     try:
-        wait = WebDriverWait(driver, 20)
         logger.debug(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
         driver = uc.Chrome(
             options=options,
@@ -88,6 +87,7 @@ def main_ig():
             use_subprocess=True,
             suppress_welcome=True
         )
+        wait = WebDriverWait(driver, 20)
         driver.maximize_window()
 
         logger.info("¡Driver iniciado OK!")
@@ -110,13 +110,16 @@ def main_ig():
         driver.find_element("id", "kc-login").click()
         time.sleep(10)  
         #//*[@id="mat-dialog-0"]
-        dialog=driver.find_element('id','mat-dialog-0')
-        print(f"DIALOG: {dialog}")
-        if dialog:
-            #//*[@id="sri-menu"]
-            menu_btn=driver.find_element(By.XPATH,'//*[@id="sri-menu"]')
-            click_con_movimiento(driver, menu_btn)
-        
+        try:
+            dialog=driver.find_element('id ','mat-dialog-0')
+            if dialog.is_displayed():
+                print(f"DIALOG: {dialog}")
+                #//*[@id="sri-menu"]
+                menu_btn=driver.find_element(By.XPATH,'//*[@id="sri-menu"]')
+                click_con_movimiento(driver, menu_btn)
+                logger.info("Dialog cerrado ✅")
+        except Exception:
+            logger.info("Sin dialog → continuando flujo normal")
         #//*[@id="mySidebar2"]/div[3]/div/button
         time.sleep(10)  
         logger.info("MENU")
@@ -270,6 +273,19 @@ def main_ig():
             logger.info("Correo de error enviado correctamente.")
         except Exception as mail_err:
             logger.error(f"No se pudo enviar el correo de error: {mail_err}")
+    
+    finally:
+        if driver:
+            try:
+                driver.service.stop()
+            except Exception:
+                pass
+            try:
+                driver.quit()
+            except OSError:
+                pass
+            except Exception as e:
+                logger.warning(f"⚠️ Error al cerrar driver: {e}")
 
 
     change_file_name_factura(name_factura, name_factura_changed)

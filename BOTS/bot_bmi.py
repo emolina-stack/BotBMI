@@ -109,12 +109,17 @@ def main_bmi():
         driver.find_element("id", "kc-login").click()
         time.sleep(10)  
         #//*[@id="mat-dialog-0"]
-        dialog=driver.find_element('id','mat-dialog-0')
-        print(f"DIALOG: {dialog}")
-        if dialog:
-            #//*[@id="sri-menu"]
-            menu_btn=driver.find_element(By.XPATH,'//*[@id="sri-menu"]')
-            click_con_movimiento(driver, menu_btn)
+        try:
+            dialog=driver.find_element('id ','mat-dialog-0')
+            if dialog.is_displayed():
+                print(f"DIALOG: {dialog}")
+                #//*[@id="sri-menu"]
+                menu_btn=driver.find_element(By.XPATH,'//*[@id="sri-menu"]')
+                click_con_movimiento(driver, menu_btn)
+                logger.info("Dialog cerrado ✅")
+        except Exception:
+            logger.info("Sin dialog → continuando flujo normal")
+            
         
         #//*[@id="mySidebar2"]/div[3]/div/button
         time.sleep(10)  
@@ -263,6 +268,25 @@ def main_bmi():
         logger.info("- Borra %APPDATA%\\undetected_chromedriver")
         logger.info("- Prueba version_main=143 o 145")
         logger.info("- pip install --upgrade undetected-chromedriver selenium")
+
+        try:
+            enviar_correo_error()
+            logger.info("Correo de error enviado correctamente.")
+        except Exception as mail_err:
+            logger.error(f"No se pudo enviar el correo de error: {mail_err}")
+
+    finally:
+        if driver:
+            try:
+                driver.service.stop()
+            except Exception:
+                pass
+            try:
+                driver.quit()
+            except OSError:
+                pass
+            except Exception as e:
+                logger.warning(f"⚠️ Error al cerrar driver: {e}")
 
 
     change_file_name_factura(name_factura, name_factura_changed)

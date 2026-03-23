@@ -9,7 +9,7 @@ import os
 import logging
 
 logger, ruta_log = configurar_logging(
-    nombre_script="ejecucion_bot_recibidos_ig",
+    nombre_script="subida_bot_recibidos",
     carpeta="logs",
     nivel=logging.DEBUG,
     mostrar_consola=True
@@ -65,8 +65,8 @@ def _subir_archivo(page, clave: str, ruta: Path):
         page.set_input_files('input[type="file"]', files=str(ruta))
         logger.info(f"Archivo subido: {ruta.name}")
         page.wait_for_timeout(3000)
-        #page.locator("#cpCol1_btnAceptar").click()
-        page.locator("#cpCol1_btnCerrar").click()
+        page.locator("#cpCol1_btnAceptar").click()
+        # page.locator("#cpCol1_btnCerrar").click()
         _eliminar_archivo(ruta)
     except Exception as e:
         logger.error(f"Error durante la subida de {clave}: {e}")
@@ -90,69 +90,93 @@ def _login(page, username: str, password: str):
 def subir_comprobantes_recibidos_ig():
     logger.info("=" * 50)
     logger.info("🟢 BOT IG — Iniciando")
-    with Camoufox(window=(1366, 768), headless=True) as browser:
+    with Camoufox(window=(1366, 768), headless=True) as browser:#   True para no visualizar pantalla
         page = browser.new_page()
-        _login(page, USERNAME_IG, PASSWORD_IG)
+        try:
+            _login(page, USERNAME_IG, PASSWORD_IG)
 
-        logger.info("BOT IG — Subiendo Facturas")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "IG_FACT", rutas_ig["IG_FACT"])
+            logger.info("BOT IG — Subiendo Facturas")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "IG_FACT", rutas_ig["IG_FACT"])
 
-        logger.info("BOT IG — Subiendo Notas de Crédito")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "IG_NC", rutas_ig["IG_NC"])
+            logger.info("BOT IG — Subiendo Notas de Crédito")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "IG_NC", rutas_ig["IG_NC"])
 
-        logger.info("BOT IG — Subiendo Comprobantes de Retención")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "IG_COMPRET", rutas_ig["IG_COMPRET"])
-
-        page.close()
+            logger.info("BOT IG — Subiendo Comprobantes de Retención")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "IG_COMPRET", rutas_ig["IG_COMPRET"])
+        
+        except Exception as ex:
+            logger.error(f"❌ BOT IG — Error durante ejecución: {ex}")
+        
+        finally:
+            try:
+                page.close()
+            except Exception:
+                pass
     logger.info("✅ BOT IG — Completado")
 
 
 def subir_comprobantes_recibidos_bmi():
     logger.info("=" * 50)
     logger.info("🔵 BOT BMI — Iniciando")
-    with Camoufox(window=(1366, 768), headless=True) as browser:
+    with Camoufox(window=(1366, 768), headless=True) as browser:#   True para no visualizar pantalla
         page = browser.new_page()
-        _login(page, USERNAME_BMI, PASSWORD_BMI)
+        try:
+            _login(page, USERNAME_BMI, PASSWORD_BMI)
 
-        logger.info("BOT BMI — Subiendo Facturas")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "BMI_FACT", rutas_bmi["BMI_FACT"])
+            logger.info("BOT BMI — Subiendo Facturas")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "BMI_FACT", rutas_bmi["BMI_FACT"])
 
-        logger.info("BOT BMI — Subiendo Notas de Crédito")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "BMI_NC", rutas_bmi["BMI_NC"])
+            logger.info("BOT BMI — Subiendo Notas de Crédito")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "BMI_NC", rutas_bmi["BMI_NC"])
 
-        logger.info("BOT BMI — Subiendo Comprobantes de Retención")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "BMI_COMPRET", rutas_bmi["BMI_COMPRET"])
+            logger.info("BOT BMI — Subiendo Comprobantes de Retención")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "BMI_COMPRET", rutas_bmi["BMI_COMPRET"])
 
-        page.close()
+        except Exception as ex:
+            logger.error(f"❌ BOT BMI — Error durante ejecución: {ex}")
+
+        finally:
+            try:
+                page.close()
+            except Exception:
+                pass
     logger.info("✅ BOT BMI — Completado")
 
 
 def subir_comprobantes_recibidos_me():
     logger.info("=" * 50)
     logger.info("🟡 BOT ME — Iniciando")
-    with Camoufox(window=(1366, 768), headless=True) as browser:
+    with Camoufox(window=(1366, 768), headless=True) as browser:#   True para no visualizar pantalla
         page = browser.new_page()
-        _login(page, USERNAME_ME, PASSWORD_ME)
+        try:
+            _login(page, USERNAME_ME, PASSWORD_ME)
 
-        logger.info("BOT ME — Subiendo Facturas")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "ME_FACT", rutas_me["ME_FACT"])
+            logger.info("BOT ME — Subiendo Facturas")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "ME_FACT", rutas_me["ME_FACT"])
 
-        logger.info("BOT ME — Subiendo Notas de Crédito")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "ME_NC", rutas_me["ME_NC"])
+            logger.info("BOT ME — Subiendo Notas de Crédito")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "ME_NC", rutas_me["ME_NC"])
 
-        logger.info("BOT ME — Subiendo Comprobantes de Retención")
-        page.wait_for_timeout(2000)
-        _subir_archivo(page, "ME_COMPRET", rutas_me["ME_COMPRET"])
+            logger.info("BOT ME — Subiendo Comprobantes de Retención")
+            page.wait_for_timeout(2000)
+            _subir_archivo(page, "ME_COMPRET", rutas_me["ME_COMPRET"])
 
-        page.close()
+        except Exception as ex:
+            logger.error(f"❌ BOT ME — Error durante ejecución: {ex}")
+
+        finally:
+            try:
+                page.close()
+            except Exception:
+                pass
     logger.info("✅ BOT ME — Completado")
 
 

@@ -1,7 +1,7 @@
 from BOTS.bot_bmi import main_bmi
 from BOTS.bot_ig import main_ig
 from BOTS.bot_me import main_me
-from subir_recibidos import ejecutar_bots_en_paralelo, subir_comprobantes_recibidos_ig
+from subir_recibidos import ejecutar_bots_en_paralelo
 from subir_recibidos import subir_comprobantes_recibidos_bmi
 from subir_recibidos import subir_comprobantes_recibidos_me
 from utils.loggin_setup import configurar_logging
@@ -39,6 +39,6 @@ def carga_archivos():
 
 if __name__ == "__main__":
     iniciar_hilo_keep_alive()
-    #execute_bots()
+    execute_bots()
     logger.info("*************************************")
     carga_archivos()

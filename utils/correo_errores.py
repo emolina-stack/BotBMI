@@ -9,8 +9,8 @@ def enviar_correo_error(
     email_from: str = os.getenv("EMAIL_FROM"),
     email_recibe: str = os.getenv("EMAIL_TO"),
     password: str = os.getenv("EMAIL_PASSWORD"),
-    subject: str = "Fallo en ejecucion de bot",
-    body: str = "Ejecucion del bot fallida.\n\nRevisa la versiones de chrome.\n\nAbre cualquier navegador y en la barra de direcciones ingresa la siguiente url: brave://version/ y valida la version de chrome y luego ejecuta el bot nuevamente. ",
+    subject: str = "Fallo en ejecucion de bot de pruebas",
+    body: str = "Ejecucion del bot fallida desde bot de pruebas.\n\nRevisa la versiones de chrome.\n\nAbre cualquier navegador y en la barra de direcciones ingresa la siguiente url: brave://version/ y valida la version de chrome y luego ejecuta el bot nuevamente. ",
 ) -> None:
 
 
