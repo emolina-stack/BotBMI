@@ -65,8 +65,8 @@ def _subir_archivo(page, clave: str, ruta: Path):
         page.set_input_files('input[type="file"]', files=str(ruta))
         logger.info(f"Archivo subido: {ruta.name}")
         page.wait_for_timeout(3000)
-        page.locator("#cpCol1_btnAceptar").click()
-        # page.locator("#cpCol1_btnCerrar").click()
+        # page.locator("#cpCol1_btnAceptar").click()
+        page.locator("#cpCol1_btnCerrar").click()
         _eliminar_archivo(ruta)
     except Exception as e:
         logger.error(f"Error durante la subida de {clave}: {e}")
@@ -90,7 +90,7 @@ def _login(page, username: str, password: str):
 def subir_comprobantes_recibidos_ig():
     logger.info("=" * 50)
     logger.info("🟢 BOT IG — Iniciando")
-    with Camoufox(window=(1366, 768), headless=True) as browser:#   True para no visualizar pantalla
+    with Camoufox(window=(1366, 768), headless=False) as browser:#   True para no visualizar pantalla
         page = browser.new_page()
         try:
             _login(page, USERNAME_IG, PASSWORD_IG)
@@ -109,6 +109,10 @@ def subir_comprobantes_recibidos_ig():
         
         except Exception as ex:
             logger.error(f"❌ BOT IG — Error durante ejecución: {ex}")
+            enviar_correo_error(
+                subject="Error al subir archivos en IG",
+                body=f"⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
+            )
         
         finally:
             try:
@@ -140,6 +144,10 @@ def subir_comprobantes_recibidos_bmi():
 
         except Exception as ex:
             logger.error(f"❌ BOT BMI — Error durante ejecución: {ex}")
+            enviar_correo_error(
+                subject="Error al subir archivos en BMI",
+                body=f"⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
+            )
 
         finally:
             try:
@@ -171,6 +179,10 @@ def subir_comprobantes_recibidos_me():
 
         except Exception as ex:
             logger.error(f"❌ BOT ME — Error durante ejecución: {ex}")
+            enviar_correo_error(
+                subject="Error al subir archivos en MAS-Ecuador",
+                body=f"⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
+            )
 
         finally:
             try:

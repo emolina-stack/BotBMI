@@ -83,7 +83,7 @@ def main_ig():
         logger.debug(f"Intentando con major version {CHROME_MAJOR_VERSION}...")
         driver = uc.Chrome(
             options=options,
-            #version_main=CHROME_MAJOR_VERSION,
+            version_main=CHROME_MAJOR_VERSION,
             use_subprocess=True,
             suppress_welcome=True
         )
@@ -269,7 +269,10 @@ def main_ig():
         logger.info("- pip install --upgrade undetected-chromedriver selenium")
 
         try:
-            enviar_correo_error()
+            enviar_correo_error(
+                subject="Error General en IG",
+                body="Este error a ocurrido en bot IG, realiza la revision de versiones de CHROME_MAJOR_VERSION, que sea compatible con el navegador \n\nRevisa la versiones de chrome. En este caso brave://version/"
+            )
             logger.info("Correo de error enviado correctamente.")
         except Exception as mail_err:
             logger.error(f"No se pudo enviar el correo de error: {mail_err}")

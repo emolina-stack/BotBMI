@@ -270,7 +270,10 @@ def main_bmi():
         logger.info("- pip install --upgrade undetected-chromedriver selenium")
 
         try:
-            enviar_correo_error()
+            enviar_correo_error(
+                subject="Error General en BMI",
+                body="Este error a ocurrido en bot BMI, realiza la revision de versiones de CHROME_MAJOR_VERSION, que sea compatible con el navegador \n\nRevisa la versiones de chrome. En este caso brave://version/"
+            )
             logger.info("Correo de error enviado correctamente.")
         except Exception as mail_err:
             logger.error(f"No se pudo enviar el correo de error: {mail_err}")
