@@ -271,7 +271,7 @@ def main_bmi():
 
         try:
             enviar_correo_error(
-                subject="Error General en BMI",
+                subject="Error General en BMI PRUEBAS",
                 body="Este error a ocurrido en bot BMI, realiza la revision de versiones de CHROME_MAJOR_VERSION, que sea compatible con el navegador \n\nRevisa la versiones de chrome. En este caso brave://version/"
             )
             logger.info("Correo de error enviado correctamente.")

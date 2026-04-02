@@ -266,7 +266,7 @@ def main_me():
 
         try:
             enviar_correo_error(
-                subject="Error General en MAS-Ecuador",
+                subject="Error General en MAS-Ecuador PRUEBAS",
                 body="Este error a ocurrido en bot MAS-Ecuador, realiza la revision de versiones de CHROME_MAJOR_VERSION, que sea compatible con el navegador \n\nRevisa la versiones de chrome. En este caso brave://version/"
             )
             logger.info("Correo de error enviado correctamente.")

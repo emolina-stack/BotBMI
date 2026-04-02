@@ -270,7 +270,7 @@ def main_ig():
 
         try:
             enviar_correo_error(
-                subject="Error General en IG",
+                subject="Error General en IG PRUEBAS",
                 body="Este error a ocurrido en bot IG, realiza la revision de versiones de CHROME_MAJOR_VERSION, que sea compatible con el navegador \n\nRevisa la versiones de chrome. En este caso brave://version/"
             )
             logger.info("Correo de error enviado correctamente.")
