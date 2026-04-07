@@ -36,9 +36,9 @@ rutas_me = {
 }
 
 USERNAME_BMI = "usrBotRecepcionBMI"
-PASSWORD_BMI = ":f6#Nd}-rW3ODP"
+PASSWORD_BMI = "R^iy-O)HJ+/hIq"
 USERNAME_IG  = "usrBotRecepcionIG"
-PASSWORD_IG  = ";?8?Ax@eg^B53o"
+PASSWORD_IG  = "YsW+8Rm$j5@v@O"
 USERNAME_ME  = "usrBotRecepcionME"
 PASSWORD_ME  = "Ae3Zx1+KzfFAve"
 
@@ -111,7 +111,7 @@ def subir_comprobantes_recibidos_ig():
             logger.error(f"❌ BOT IG — Error durante ejecución: {ex}")
             enviar_correo_error(
                 subject="Error al subir archivos en IG PRUEBAS",
-                body=f"⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
+                body=f"⚠️⚠️Revisa si el usuario se encuentra bloqueado.\n\n⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
             )
         
         finally:
@@ -146,7 +146,7 @@ def subir_comprobantes_recibidos_bmi():
             logger.error(f"❌ BOT BMI — Error durante ejecución: {ex}")
             enviar_correo_error(
                 subject="Error al subir archivos en BMI PRUEBAS",
-                body=f"⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
+                body=f"⚠️⚠️Revisa si el usuario se encuentra bloqueado.\n\n⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
             )
 
         finally:
@@ -181,7 +181,7 @@ def subir_comprobantes_recibidos_me():
             logger.error(f"❌ BOT ME — Error durante ejecución: {ex}")
             enviar_correo_error(
                 subject="Error al subir archivos en MAS-Ecuador PRUEBAS",
-                body=f"⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
+                body=f"⚠️⚠️Revisa si el usuario se encuentra bloqueado.\n\n⚠️⚠️ Ocurrio un error al subir los archivos en el portal de IFactura: {ex}"
             )
 
         finally:
